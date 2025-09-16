@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guilherme Trombeta — Psicologia Clínica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --maroon: #7a3f3f;
+      --muted: #bfbfc0;
+      --accent: #dca24a;
+      --max-width: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family: 'Merriweather', Georgia, serif; margin:0; color:#222}
+
+    .hero{
+      background-color:var(--maroon);
+      color: #fff;
+      min-height:60vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+      padding:48px 24px;
+    }
+    .hero-inner{max-width:var(--max-width); width:100%; margin:auto; display:flex; flex-direction:column; align-items:center; gap:6px}
+    .psi{
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight:700;
+      font-size:120px;
+      line-height:0.9;
+      color:#f6f6f6;
+      text-shadow: 4px 4px 10px rgba(0,0,0,0.4), 0 6px 0 rgba(0,0,0,0.12);
+    }
+    .name{font-size:34px; font-weight:700; margin-top:6px}
+    .crp{font-size:22px; font-weight:700; margin-top:2px}
+    .subtitle{font-size:26px; color:var(--muted); margin-bottom:14px}
+
+    .nav{position:absolute; top:20px; left:20px; right:20px; display:flex; justify-content:flex-end; align-items:center}
+    .nav a{color: #f3f3f3; text-decoration:none; margin-left:18px; font-weight:600}
+
+    main{max-width:var(--max-width); margin:36px auto; padding:0 18px}
+    .cards{display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:18px}
+    .card{background:#fff; border-radius:12px; padding:20px; box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+    h2.section-title{margin:0 0 16px; font-size:24px; color:var(--maroon); border-bottom:2px solid var(--muted); padding-bottom:6px}
+
+    .sobre-content{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+      flex-wrap:wrap;
+    }
+    .sobre-text{
+      flex:1;
+      text-align:justify;
+    }
+    .sobre-foto{
+      flex:0 0 220px;
+      display:flex;
+      justify-content:center;
+    }
+    .sobre-foto img{
+      width:220px;
+      height:220px;
+      object-fit:cover;
+      border-radius:50%;
+      box-shadow:0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .contact{display:grid; grid-template-columns:1fr; gap:24px; align-items:start}
+
+    footer{padding:24px; text-align:center; color:#666}
+
+    @media(max-width:720px){
+      .psi{font-size:72px}
+      .name{font-size:22px}
+      .crp{font-size:16px}
+      .subtitle{font-size:18px}
+      .nav{position:static; padding-bottom:12px; justify-content:center}
+      .sobre-content{flex-direction:column; text-align:center}
+      .sobre-text{text-align:justify}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" role="banner">
+    <nav class="nav" aria-label="menu">
+      <div class="links">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+
+    <div class="hero-inner">
+      <div class="psi" aria-hidden>Ψ</div>
+      <div class="name">Guilherme Trombeta</div>
+      <div class="crp">CRP: 06/220767</div>
+      <div class="subtitle">Psicologia Clínica</div>
+      <p style="max-width:760px; color:rgba(255,255,255,0.9)">Atendimento clínico individual para adolescentes, jovens e adultos.</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="sobre" style="margin-bottom:18px">
+      <h2 class="section-title">Sobre</h2>
+      <div class="card">
+        <div class="sobre-content">
+          <div class="sobre-text">
+            <p>Olá, me chamo Guilherme Trombeta e sou psicólogo clínico orientado pela Abordagem Centrada na Pessoa (ACP) que atua como facilitador em seu processo de autoconhecimento.</p>
+            <p>Com minha formação em Psicologia orientada por bases humanistas, entendo que o ser humano precisa elaborar e ressignificar suas vivências e, acima de tudo, que cada pessoa é quem mais sabe sobre si mesma. No entanto, às vezes precisamos de um espaço ou de uma ajuda para lidar com situações que podem ser difíceis de enfrentar sozinhos.</p>
+            <p>Se está buscando ajuda, entre em contato e vamos marcar uma sessão! Afinal, o mundo já nos faz lidar com muita coisa sozinho sem nos dar ouvidos ou voz, então que tal um espaço para poder falar e ser ouvido?</p>
+          </div>
+          <div class="sobre-foto">
+            <img src="foto.jpg.jpeg" alt="Foto de Guilherme Trombeta">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" style="margin-bottom:18px">
+      <h2 class="section-title">Serviços</h2>
+      <div class="cards">
+        <div class="card">
+          <h4>Psicoterapia Individual</h4>
+          <p>Presencial nas cidades de Campinas e Piracicaba e Online.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2 class="section-title">Contato</h2>
+      <div class="contact">
+        <div class="card">
+          <p><strong>Endereços:</strong> Campinas e Piracicaba</p>
+          <p><strong>Email:</strong> <a href="mailto:guitrombeta@gmail.com">guitrombeta@gmail.com</a></p>
+          <p><strong>Telefone:</strong> <a href="tel:+5519991466986">(19) 99146-6986</a></p>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/5519991466986" target="_blank">Enviar mensagem</a></p>
+          <p><strong>Horários:</strong> Segunda a Sexta, das 8h às 20h</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="ano"></span> Guilherme Trombeta — Psicologia Clínica
+  </footer>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
