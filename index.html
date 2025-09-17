@@ -72,42 +72,6 @@
       border-radius:3px;
     }
 
-    /* Mobile */
-    @media(max-width:720px){
-      .psi{font-size:72px}
-      .name{font-size:22px}
-      .crp{font-size:16px}
-      .subtitle{font-size:18px}
-
-      .nav{
-        align-items:flex-end;
-      }
-      .nav .links{
-        max-height:0;
-        overflow:hidden;
-        display:flex;
-        flex-direction:column;
-        text-align:right;
-        position:absolute;
-        top:60px;
-        right:20px;
-        background:var(--maroon);
-        border-radius:8px;
-        padding:0 12px;
-        transition:max-height 0.4s ease, padding 0.3s ease;
-      }
-      .nav .links a{
-        margin:10px 0;
-        display:block;
-      }
-      .menu-toggle{display:flex}
-
-      .nav.active .links{
-        max-height:300px; /* espaço suficiente para caber os links */
-        padding:12px;
-      }
-    }
-
     main{max-width:var(--max-width); margin:36px auto; padding:0 18px}
     .cards{display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:18px}
     .card{background:#fff; border-radius:12px; padding:20px; box-shadow:0 6px 18px rgba(0,0,0,0.06)}
@@ -140,6 +104,37 @@
     .contact{display:grid; grid-template-columns:1fr; gap:24px; align-items:start}
 
     footer{padding:24px; text-align:center; color:#666}
+
+    /* Mobile */
+    @media(max-width:720px){
+      .psi{font-size:72px}
+      .name{font-size:22px}
+      .crp{font-size:16px}
+      .subtitle{font-size:18px}
+
+      .nav{align-items:flex-end}
+      .nav .links{
+        max-height:0;
+        overflow:hidden;
+        display:flex;
+        flex-direction:column;
+        text-align:right;
+        position:absolute;
+        top:60px;
+        right:20px;
+        background:var(--maroon);
+        border-radius:8px;
+        padding:0 12px;
+        transition:max-height 0.4s ease, padding 0.3s ease;
+      }
+      .nav .links a{margin:10px 0; display:block}
+      .menu-toggle{display:flex}
+      .nav.active .links{max-height:300px; padding:12px}
+
+      /* Centralizar foto no mobile */
+      .sobre-content{flex-direction:column; text-align:center}
+      .sobre-foto{justify-content:center}
+    }
   </style>
 </head>
 <body>
