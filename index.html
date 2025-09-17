@@ -40,8 +40,73 @@
     .crp{font-size:22px; font-weight:700; margin-top:2px}
     .subtitle{font-size:26px; color:var(--muted); margin-bottom:14px}
 
-    .nav{position:absolute; top:20px; left:20px; right:20px; display:flex; justify-content:flex-end; align-items:center}
-    .nav a{color: #f3f3f3; text-decoration:none; margin-left:18px; font-weight:600}
+    /* NAV */
+    .nav{
+      position:absolute;
+      top:20px;
+      right:20px;
+      display:flex;
+      align-items:center;
+      flex-direction:column;
+    }
+    .nav .links a{
+      color: #f3f3f3;
+      text-decoration:none;
+      margin-left:18px;
+      font-weight:600;
+    }
+
+    /* Botão Hamburguer */
+    .menu-toggle{
+      display:none;
+      flex-direction:column;
+      cursor:pointer;
+      width:28px;
+      height:22px;
+      justify-content:space-between;
+    }
+    .menu-toggle span{
+      height:3px;
+      width:100%;
+      background:#fff;
+      border-radius:3px;
+    }
+
+    /* Mobile */
+    @media(max-width:720px){
+      .psi{font-size:72px}
+      .name{font-size:22px}
+      .crp{font-size:16px}
+      .subtitle{font-size:18px}
+
+      .nav{
+        align-items:flex-end;
+      }
+      .nav .links{
+        max-height:0;
+        overflow:hidden;
+        display:flex;
+        flex-direction:column;
+        text-align:right;
+        position:absolute;
+        top:60px;
+        right:20px;
+        background:var(--maroon);
+        border-radius:8px;
+        padding:0 12px;
+        transition:max-height 0.4s ease, padding 0.3s ease;
+      }
+      .nav .links a{
+        margin:10px 0;
+        display:block;
+      }
+      .menu-toggle{display:flex}
+
+      .nav.active .links{
+        max-height:300px; /* espaço suficiente para caber os links */
+        padding:12px;
+      }
+    }
 
     main{max-width:var(--max-width); margin:36px auto; padding:0 18px}
     .cards{display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:18px}
@@ -75,21 +140,16 @@
     .contact{display:grid; grid-template-columns:1fr; gap:24px; align-items:start}
 
     footer{padding:24px; text-align:center; color:#666}
-
-    @media(max-width:720px){
-      .psi{font-size:72px}
-      .name{font-size:22px}
-      .crp{font-size:16px}
-      .subtitle{font-size:18px}
-      .nav{position:static; padding-bottom:12px; justify-content:center}
-      .sobre-content{flex-direction:column; text-align:center}
-      .sobre-text{text-align:justify}
-    }
   </style>
 </head>
 <body>
   <header class="hero" role="banner">
     <nav class="nav" aria-label="menu">
+      <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <div class="links">
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
@@ -153,8 +213,13 @@
 
   <script>
     document.getElementById('ano').textContent = new Date().getFullYear();
+
+    // Script para abrir/fechar menu hamburguer
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.querySelector('.nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
   </script>
 </body>
 </html>
-
-
